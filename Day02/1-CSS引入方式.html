@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 3.引入外部样式表 -->
+    <!-- <link rel="stylesheet" href="./outer.css"> -->
+    <!-- 1.内部样式表 -->
+    <style>
+        /* 3.2 @import引入 必须要放在style标签第一行 */
+        @import url(./outer.css);
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 2.内联样式/行内样式(一两个属性时可用) -->
+    <div style="color: green;">块级元素</div>
+</body>
+</html>

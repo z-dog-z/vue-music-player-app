@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css语法
+           css规则集：选择器+声明块{}
+           声明块{
+             属性名：属性值
+             多对属性之间;隔开
+             最后一对属性不加;
+           }
+        */
+        /* 1.标签选择器 标签名{}可以选取所有标签名为×××的元素 */
+        div{
+            background-color: #cbf2f7;
+            /* 上外边距 */
+            margin-top: 10px;
+        }
+        /* 2.id选择器 */
+        #second{
+            background-color: pink;
+        }
+        /* 3.类选择器 类名{} 选择类名为×××的元素 */
+        .color{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+       所有标签可以使用通用属性
+       1.id 唯一标识一个元素 类似于人的身份证
+       2.class 表示一类元素 类似于人名
+       3.style 用来给标签设置样式 内联样式表
+       4.title 光标悬浮到标签提示说明
+    -->
+    <!-- 快捷键 div*3{块级元素$} $表示按顺序-->
+    <div class="color">块级元素1</div>
+    <div id="second">块级元素2</div>
+    <div>块级元素3</div>
+    <p class="color" title="我是一个p标签">段落标签</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 300px;
+            background-color: azure;
+            color: aqua;
+            text-align: center;
+            line-height: 300px;
+            font-size: 28px;
+            /*需要过渡的属性名称*/
+            /*transition-property: font-size;*/
+            /*设置过渡持续时长*/
+            /*transition-duration: 2s;*/
+            /*设置过渡速度曲线*/
+            /*transition-timing-function: linear;*/
+            /*设置多个属性同时过渡*/
+            transition: font-size 2s linear,color 2s linear,background-color 2s linear;
+        }
+        /*过渡需要触发条件*/
+        div:hover{
+            font-size: 68px;
+            color:green;
+            background-color: honeydew;
+        }
+        img{
+            transition: width 2s linear;
+        }
+        img:hover{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>山西农业大学</div>
+    <img width="150px" src="../音视频/6.jpg" alt="">
+</body>
+</html>

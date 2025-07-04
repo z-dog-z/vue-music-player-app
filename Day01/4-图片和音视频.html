@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 图片 src属性连接到图片的地址 alt图片加载失败文字说明
+         width和height也是图片的特有属性 只需要设置其中一个 另一个会进行自适应 
+    -->
+    <image width="150px" src="../音视频/8.jpg" alt="图片加载失败文字说明"></image>
+    <!--<image width="150px" src="https://img0.baidu.com/it/u=1337068678,3064275007&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=750" alt=""></image>-->
+    
+    <!-- 
+          音视频标签video
+          默认状态不能播放，controls属性为控制条 
+          width和height 只需要设置一个 另一个会自适应
+          autoplay：自动播放
+          loop：循环播放
+          muted：静音播放
+          poster：设置封面
+    -->
+     <video width="400px" muted loop poster="../音视频/6.jpg" src="../音视频/1.mp4" controls></video>
+     <!-- 
+           音频标签audio
+           默认状态不能播放，controls属性为控制条 
+           autoplay：自动播放
+           muted：静音播放
+           loop：循环播放
+           width、height和poster不可生效
+     -->
+     <audio loop autoplay src="../音视频/1.mp3" controls></audio>
+</body>
+</html>

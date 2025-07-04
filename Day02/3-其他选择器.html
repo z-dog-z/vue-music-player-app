@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 使用空格隔开 表示选取所有后代标签 */
+        .parent p{
+            background-color: #f9b7ff;
+        }
+        /* 子代选择器 使用>隔开 表示选择所有直接子代标签 */
+        .parent>p{
+            color: hotpink;
+            background-color: lightpink;
+        }
+        /* 普遍/通用选择器 *表示选中所有标签 不计入权重计算 优先级最低 */
+        *{
+            margin: 0;
+            padding: 0;
+            /* 取消列表标志项 */
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <p>段落标签</p>
+        <p>段落标签</p>
+        <p>段落标签</p>
+        <p>段落标签</p>
+        <div>
+            <p>段落标签</p>
+            <p>段落标签</p>
+            <p>段落标签</p>
+            <p>段落标签</p>
+        </div>
+    </div>
+    <!-- 无序列表 (ul>li*3{})
+         ul li块级元素 默认列表标志项是desc实心圆 circle空心圆 square实心方块                                                                                                                                                                                                                                                                                                                 
+    -->
+     <ul type="circle">
+        <li>无序列表</li>
+        <li>无序列表</li>
+        <li>无序列表</li>
+     </ul>
+     <!-- 有序列表 (ol>li*3{})
+        默认列表标志项是1 还有I A a i                                                                                                                                                                                                                                                                                                             
+    -->
+     <ol type="I">
+        <li>有序列表</li>
+        <li>有序列表</li>
+        <li>有序列表</li>
+     </ol>
+</body>
+</html>

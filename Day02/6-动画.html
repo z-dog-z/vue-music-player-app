@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /*设置圆角边框*/
+            border-radius: 50%;
+            /*将动画设置给div*/
+            animation-name: move;
+            /*设置动画持续时长*/
+            animation-duration: 2s;
+            /*设置动画速度曲线*/
+            animation-timing-function: linear;
+            /*设置动画执行次数 infinite n（2）*/
+            animation-iteration-count: infinite;
+            /*设置动画反向执行 alternate反向执行*/
+            animation-direction: alternate;
+        }
+        /*1.定义动画关键帧*/
+        @keyframes move {
+            /*开始 结束 from to*/
+            /*需要中间过程 0% 25% 50% 75% 100%*/
+            /*from{
+                margin-left: 0px;
+            }
+            to{
+                margin-left: 200px;
+            }*/
+            0%{
+                /*形变：平移translate 旋转rotate 缩放*/
+                transform: translateX(0px) rotate(0deg);
+            }
+            25%{
+                transform: translateX(50px) rotate(90deg);
+                border-radius: 10px;
+                background-color: rgb(13, 213, 7);
+            }
+            50%{
+                transform: translateX(100px) rotate(180deg);
+                border-radius: 20px;
+                background-color: rgb(25, 243, 0);
+            }
+            75%{
+                transform: translateX(150px) rotate(270deg);
+                border-radius: 35px;
+                background-color: rgb(94, 255, 82);
+            }
+            100%{
+                transform: translateX(200px) rotate(360deg);
+                border-radius: 50%;
+                background-color: rgb(144, 223, 150);
+            }
+        }
+        /*定义一个心跳动画*/
+        @keyframes boom {
+            from{
+                transform: none;
+            }
+            to{
+                /*scale为缩放，>1放大，<1缩小*/
+                transform: scale(1.2);
+            }
+        }
+        img{
+            animation: boom .2s linear infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <img width="150px" src="../音视频/1.webp" alt="">
+</body>
+</html>
