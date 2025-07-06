@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN的方式引入vue框架 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .active{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 视图层  模板-->
+    <div id="app">
+        <!-- 1.文本插值语法 Mustache语法 -->
+        {{msg}}
+        <!-- 2.v-html指令 可以将标签字符串解析为标签 -->
+         <div v-html="a"></div>
+         <!-- 3.使用v-bind绑定变量 -->
+         <div v-bind:title="title">块级元素</div>
+         <!-- 4.v-bind简写为:  动态绑定多个值语法为v-bind="obj" -->
+          <div :title="title" v-bind="obj">块级元素</div>
+          <!-- 5.使用js表达式 -->
+           {{num + 10}}
+           {{3>5?'YES':'NO'}}
+           {{msg.split(' ').reverse().join(' ')}}<!-- split是转为数组的，reverse是翻转数组 -->
+           <!-- 事件绑定 v-on：事件类型 -->
+           <button v-on:click="handler">点击我{{count}}</button>
+           <!-- 事件可以简写v-on为@ -->
+           <button @click="handler">点击我{{count}}</button>
+           <!-- 条件渲染 v-if v-else-if v-else v-show -->
+           <div v-if="score>=90&&score<=100">优秀</div>
+           <div v-else-if="score>=80&&score<90">良好</div>
+           <div v-else-if="score>=70&&score<80">中等</div>
+           <div v-else>及格</div>
+
+           <div v-show="isShow">我是一个div</div>
+           <ul>
+               <!-- 列表渲染 item表示数组的每一项 index数组每一项对应的索引 -->
+               <li v-for="(item,index) in arr" :key="item.id">{{index}}--{{item.name}}</li>
+           </ul>
+           <!-- 动态类名的绑定 -->
+           <section :class="{active:score===90}">我是section标签</section>
+    </div>
+    <script>
+        //创建一个vue应用
+        const { createApp,ref } = Vue;
+        createApp({
+            //应用的入口函数
+            setup(){
+                //vue变量 响应式状态
+                const msg = ref('hello Vue3');
+                const a = ref('<a href="https://www.baidu.com">百度一下</a>');
+                const title = ref('我是悬浮到标签的提示说明');
+                const num = ref(1);
+                const count = ref(0);
+                const score = ref(90);
+                const isShow = ref(true);
+                const arr = ref([
+                    {id:1,name:"zdogz"},
+                    {id:2,name:"zpigz"},
+                    {id:3,name:"zcatz"},
+                ]);
+                const obj = ref({
+                    id:'first',
+                    class:'second',
+                    style:'background-color:red'
+                })
+                const handler = ()=>{
+                    count.value++
+                }
+                //将状态和方法暴露给模板
+                return{
+                    msg,
+                    a,
+                    title,
+                    obj,
+                    num,
+                    count,
+                    score,
+                    isShow,
+                    arr,
+                    handler
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
