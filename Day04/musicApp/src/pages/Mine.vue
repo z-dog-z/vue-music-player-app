@@ -71,10 +71,32 @@
                     </div>
                 </van-tab>
                 <van-tab title="收藏歌单" name="b">
-                    <div class="tab">111</div>
+                    <div class="tab">
+                        <div class="top">
+                            <div class="left" style="font-size: 12px;color: #736d6d;">收藏歌单(2个)</div>
+                            <div class="right">
+                            <van-icon name="bars" color="#736d6d" size="18"></van-icon>
+                            </div>
+                        </div>
+                        <div class="bottom" v-for="item in collectList" :key="item.id">
+                          <div class="left">
+                            <img width="45px" height="45px" :src="item.url" alt="">
+                        </div>
+                        <div class="right">
+                         <div style="font-weight: bold;">{{ item.name }}</div>
+                         <div style="font-size: 12px;color: #736d6d;margin-top: 3px;">{{ item.num }}首，by {{ item.creator }}</div>
+                         </div>
+                       </div>
+                    </div>
                 </van-tab>
                 <van-tab title="歌单助手" name="c">
-                    <div class="tab">111</div>
+                    <div class="tab">
+                        <div style="padding: 20px;text-align: center;color: #736d6d;">
+                            <van-icon name="music" size="50" />
+                            <div style="margin-top: 10px;">你还没有创建歌单助手</div>
+                            <van-button size="small" style="margin-top: 15px;" round type="danger">创建歌单助手</van-button>
+                        </div>
+                    </div>
                 </van-tab>
             </van-tabs>
         </div>
@@ -96,9 +118,14 @@ const gridList = ref([
 ]);
 // 定义一个创建歌单的数组
 const playList = ref([
-    {id:1,url:"https://y.gtimg.cn/music/photo_new/T062M000000C6kiG0EYTBe.jpg?max_age=0",name:'exo',num:'30'},
+    {id:1,url:"https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/b4/90/5bb490f9-4db6-44be-7183-b6e844ec75db/EXO_2_EXODUS_KORver.jpg/1200x1200bf-60.jpg",name:'exo',num:'30'},
     {id:2,url:"https://ts4.tc.mm.bing.net/th/id/OIP-C.M6ayu7bqSeb_f4w6pN4m3gHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",name:'林俊杰',num:'25'},
     {id:3,url:"https://img.duotegame.com/article/contents/2022/07/13/2022071344152899.jpg",name:'周杰伦',num:'10'},
+]);
+// 定义一个收藏歌单的数组
+const collectList = ref([
+    {id:1,url:"https://pic1.zhimg.com/v2-f9467ef01e077144ec25890dc43cc7cc_r.jpg",name:'流行热歌榜',num:'100',creator:'zdodz'},
+    {id:2,url:"https://pic3.zhimg.com/v2-c896fcdf2d7d6f6538bb96d2c878e562_r.jpg",name:'K-POP精选',num:'50',creator:'zpigz'},
 ]);
 </script>
 <style lang="less" scoped>

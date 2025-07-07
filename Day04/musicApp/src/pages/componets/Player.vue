@@ -8,7 +8,7 @@
                     <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/d8/11/3a/d8113a49-77df-5caf-574e-a3db86a41633/asset.jpg/1200x1200bf-60.jpg" 
                     alt="">
                 </div>
-                <div style="margin-left: 5px;font-family: '微软雅黑';">Histroy-exo</div>
+                <div style="margin-left: 5px;font-family: '微软雅黑';">月光-exo</div>
             </div>
             <!-- 右侧放的是播放按钮和图标 -->
             <div class="right">
@@ -34,7 +34,7 @@ const toggle = ref(false);
 // 声明音频对象 
 let audio = ref(null);
 // 声明音频地址
-const audioUrl = 'https://m801.music.126.net/20250706111957/f4052a984df420e31c839f16c647dc2e/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14784888476/8a23/8e86/3454/fb72d2b3c8a9f0ce949e2e3827bd755d.mp3?vuutv=2MI9bBXm+ivH3aUjmPefO7+dMQqdL4C3r6HAsjLSZJVk853oglEqxz8R6u1R0vaFapSCEx1DWgAhlw2w8VvbCwr8aQyktAhyivjwH93XasA=';
+const audioUrl = 'http://music.163.com/song/media/outer/url?id=28497220.mp3';
 // 控制播放状态
 const playStatus = () => {
     player.value = !player.value;//切换播放状态

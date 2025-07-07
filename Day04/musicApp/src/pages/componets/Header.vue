@@ -43,7 +43,7 @@
      .active{
           font-weight: bold;
           font-family: "微软雅黑";
-          color: rgb(24, 151, 7);
+          color: red;
      }
 }
 </style>
